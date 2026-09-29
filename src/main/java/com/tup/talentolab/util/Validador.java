@@ -33,4 +33,13 @@ public class Validador {
             throw new StockInsuficienteException("El stock no puede ser negativo.");
         }
     }
+
+    // validar categoría
+    public static void validarCategoria(String categoria){
+        // una categoría vacía no representa a una categoria
+        if (categoria == null || categoria.isBlank()){
+            throw new IllegalArgumentException("La categoría no puede estar vacía.");
+        }
+    }
+
 }
