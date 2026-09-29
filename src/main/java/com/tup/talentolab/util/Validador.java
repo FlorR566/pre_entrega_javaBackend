@@ -2,6 +2,9 @@ package com.tup.talentolab.util;
 
 import com.tup.talentolab.exception.StockInsuficienteException;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  * Clase con métodos de validación reutilizables.
  * Todos los métodos son estáticos.
@@ -39,6 +42,23 @@ public class Validador {
         // una categoría vacía no representa a una categoria
         if (categoria == null || categoria.isBlank()){
             throw new IllegalArgumentException("La categoría no puede estar vacía.");
+        }
+    }
+
+    // Lectura por consola
+    public static int leerEntero(Scanner sc, String mensaje){
+        // bucle infinito que se rompe cuando el usuario ingresa un entero válido
+        while(true){
+            System.out.println(mensaje);
+            try {
+                int valor = sc.nextInt();
+                sc.nextLine(); // limpia el salto de línea pendiente
+                return valor;
+            } catch (InputMismatchException e) {
+                // todo: handle exception
+                System.out.println("Debe ingresar un número entero. Inténtelo nuevamente.");
+                sc.nextLine(); // limpia el salto de línea pendiente
+            }
         }
     }
 
