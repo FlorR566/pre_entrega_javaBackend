@@ -9,7 +9,7 @@ package com.tup.talentolab.exception;
  **/
 
 public class ProductoNoEncontradoException extends RuntimeException {
-    public ProductoNoEncontradoException(int id) {
-        super("No se encontró ningún producto con ID: " + id);
+    public ProductoNoEncontradoException(String mensaje) {
+        super(mensaje);
     }
 }

@@ -46,7 +46,7 @@ public class ProductoService {
             }
         }
         // Si llegamos acá es porque no lo encontramos
-        throw new ProductoNoEncontradoException(id);
+        throw new ProductoNoEncontradoException("No se encontró ningún producto con id: " + id);
     }
 
     /**
