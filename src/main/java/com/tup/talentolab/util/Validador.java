@@ -13,4 +13,13 @@ public class Validador {
             throw new IllegalArgumentException("El nombre no puede estar vacío.");
         }
     }
+
+    // validar precio
+    public static void validarPrecio(double precio){
+        // no sean negativos
+        // acepta 0
+        if (precio < 0){
+            throw new  IllegalArgumentException("El precio no puede ser negativo.");
+        }
+    }
 }
