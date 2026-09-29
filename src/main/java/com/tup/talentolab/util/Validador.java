@@ -73,10 +73,17 @@ public class Validador {
                 sc.nextLine();
                 return valor;
             } catch (Exception e) {
-                System.out.println("Debe ingresar un número decimal (coma o punto");
+                System.out.println("Debe ingresar un número decimal (con punto)");
                 sc.nextLine();
             }
         }
     }
+
+    public static String leerTexto(Scanner sc, String mensaje){
+        // lectura simple de texto
+        System.out.print(mensaje);
+        return  sc.nextLine();
+    }
+
 
 }
