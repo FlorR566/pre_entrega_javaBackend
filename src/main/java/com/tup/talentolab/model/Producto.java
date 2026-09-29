@@ -23,7 +23,7 @@ public class Producto {
         setNombre(nombre);
         setPrecio(precio);
         setStock(stock);
-        this.categoria = categoria;
+        setCategoria(categoria);
     }
 
     // getters y setters
@@ -60,6 +60,17 @@ public class Producto {
     public void setStock(int stock) {
         if (stock >= 0) {
             this.stock = stock;
+        }
+    }
+
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        if (categoria != null && !categoria.isBlank()) {
+            this.categoria = categoria;
         }
     }
 
