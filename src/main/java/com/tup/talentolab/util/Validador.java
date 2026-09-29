@@ -1,5 +1,7 @@
 package com.tup.talentolab.util;
 
+import com.tup.talentolab.exception.StockInsuficienteException;
+
 /**
  * Clase con métodos de validación reutilizables.
  * Todos los métodos son estáticos.
@@ -20,6 +22,15 @@ public class Validador {
         // acepta 0
         if (precio < 0){
             throw new  IllegalArgumentException("El precio no puede ser negativo.");
+        }
+    }
+
+    // validad stock
+    public static void validarStock(int stock){
+        // no acepta stock negativo
+        // usa excepción personalizada
+        if(stock < 0){
+            throw new StockInsuficienteException("El stock no puede ser negativo.");
         }
     }
 }
