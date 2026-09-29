@@ -11,6 +11,10 @@ import java.util.Scanner;
  *
  **/
 public class Validador {
+
+    // Privatizamos el constructor para evitar instanciaciones innecesarias
+    private Validador(){}
+
     // validar nombre
     public static void validarNombre(String nombre){
         // Un nombre vacío no representa un producto válido
