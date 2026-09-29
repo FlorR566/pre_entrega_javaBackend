@@ -49,15 +49,28 @@ public class Validador {
     public static int leerEntero(Scanner sc, String mensaje){
         // bucle infinito que se rompe cuando el usuario ingresa un entero válido
         while(true){
-            System.out.println(mensaje);
+            System.out.print(mensaje);
             try {
                 int valor = sc.nextInt();
                 sc.nextLine(); // limpia el salto de línea pendiente
                 return valor;
             } catch (InputMismatchException e) {
-                // todo: handle exception
                 System.out.println("Debe ingresar un número entero. Inténtelo nuevamente.");
                 sc.nextLine(); // limpia el salto de línea pendiente
+            }
+        }
+    }
+
+    public static double leerDecimal(Scanner sc, String mensaje){
+        while(true){
+            System.out.print(mensaje);
+            try {
+                double valor = sc.nextDouble();
+                sc.nextLine();
+                return valor;
+            } catch (Exception e) {
+                System.out.println("Debe ingresar un número decimal (coma o punto");
+                sc.nextLine();
             }
         }
     }
