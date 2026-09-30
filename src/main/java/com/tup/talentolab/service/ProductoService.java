@@ -4,13 +4,14 @@ import com.tup.talentolab.exception.ProductoNoEncontradoException;
 import com.tup.talentolab.model.Producto;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Servicio que contiene la lógica de negocio.
  * Gestiona la lista de productos en memoria.
  **/
 public class ProductoService {
-    private ArrayList<Producto> productos = new ArrayList<>();
+    private List<Producto> productos = new ArrayList<>();
 
     /**
      * Agrega un nuevo producto. La validación de datos se hace en Main.
