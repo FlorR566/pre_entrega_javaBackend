@@ -51,6 +51,19 @@ public class ProductoService {
     }
 
     /**
+     * Actualiza un producto por ID.
+     * Usa buscarPorId — si no existe, la excepción se propaga sola.
+     */
+    public void actualizarPorId(int id, String nombre, double precio, int stock, String categoria) {
+        Producto p = buscarPorId(id); // si el "id" no existe, se corta en el throw
+        p.setNombre(nombre);
+        p.setPrecio(precio);
+        p.setStock(stock);
+        p.setCategoria(categoria);
+        System.out.println("Producto actualizado: " + p);
+    }
+
+    /**
      * Elimina un producto por ID.
      * Usa buscarPorId — si no existe, la excepción se propaga sola.
      */
