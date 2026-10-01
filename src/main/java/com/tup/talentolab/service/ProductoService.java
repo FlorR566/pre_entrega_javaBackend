@@ -4,13 +4,14 @@ import com.tup.talentolab.exception.ProductoNoEncontradoException;
 import com.tup.talentolab.model.Producto;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Servicio que contiene la lógica de negocio.
  * Gestiona la lista de productos en memoria.
  **/
 public class ProductoService {
-    private ArrayList<Producto> productos = new ArrayList<>();
+    private List<Producto> productos = new ArrayList<>();
 
     /**
      * Agrega un nuevo producto. La validación de datos se hace en Main.
@@ -47,6 +48,19 @@ public class ProductoService {
         }
         // Si llegamos acá es porque no lo encontramos
         throw new ProductoNoEncontradoException("No se encontró ningún producto con id: " + id);
+    }
+
+    /**
+     * Actualiza un producto por ID.
+     * Usa buscarPorId — si no existe, la excepción se propaga sola.
+     */
+    public void actualizarPorId(int id, String nombre, double precio, int stock, String categoria) {
+        Producto p = buscarPorId(id); // si el "id" no existe, se corta en el throw
+        p.setNombre(nombre);
+        p.setPrecio(precio);
+        p.setStock(stock);
+        p.setCategoria(categoria);
+        System.out.println("Producto actualizado: " + p);
     }
 
     /**
